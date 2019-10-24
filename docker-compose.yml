@@ -16,6 +16,9 @@ services:
       - MARIADB_PORT_NUMBER=3306
       - MATOMO_DATABASE_USER=bn_matomo
       - MATOMO_DATABASE_NAME=bitnami_matomo
+      - MATOMO_WEBSITE_NAME=analytics.irabu.dev
+      - MATOMO_WEBSITE_HOST=https://analytics.irabu.dev
+      - MATOMO_ENABLE_PROXY_URI_HEADER=yes
       - ALLOW_EMPTY_PASSWORD=yes
       - VIRTUAL_HOST=analytics.irabu.co.tz, analytics.irabu.dev
       - LETSENCRYPT_HOST=analytics.irabu.co.tz, analytics.irabu.dev

@@ -17,6 +17,9 @@ services:
       - MATOMO_DATABASE_USER=bn_matomo
       - MATOMO_DATABASE_NAME=bitnami_matomo
       - ALLOW_EMPTY_PASSWORD=yes
+      - VIRTUAL_HOST=analytics.irabu.co.tz, analytics.irabu.dev
+      - LETSENCRYPT_HOST=analytics.irabu.co.tz, analytics.irabu.dev
+      - LETSENCRYPT_EMAIL=info@irabu.co.tz
     ports:
       - '80'
       # - '443:443'
@@ -26,6 +29,7 @@ services:
       - 'matomo_data:/bitnami'
     networks: 
       - default
+      
 volumes:
   mariadb_data:
     driver: local

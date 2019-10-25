@@ -12,17 +12,22 @@ services:
   matomo:
     image: 'bitnami/matomo:3'
     environment:
-      - MARIADB_HOST=mariadb
-      - MARIADB_PORT_NUMBER=3306
-      - MATOMO_DATABASE_USER=bn_matomo
-      - MATOMO_DATABASE_NAME=bitnami_matomo
-      - MATOMO_WEBSITE_NAME=analytics.irabu.dev
-      - MATOMO_WEBSITE_HOST=https://analytics.irabu.dev
-      - MATOMO_ENABLE_PROXY_URI_HEADER=yes
-      - ALLOW_EMPTY_PASSWORD=yes
-      - VIRTUAL_HOST=analytics.irabu.co.tz, analytics.irabu.dev
-      - LETSENCRYPT_HOST=analytics.irabu.co.tz, analytics.irabu.dev
-      - LETSENCRYPT_EMAIL=info@irabu.co.tz
+      - MARIADB_HOST=${MARIADB_HOST}
+      - MARIADB_PORT_NUMBER=${MARIADB_PORT_NUMBER}
+      - MATOMO_DATABASE_USER=${MATOMO_DATABASE_USER}
+      - MATOMO_DATABASE_NAME=${MATOMO_DATABASE_NAME}
+      - MATOMO_WEBSITE_NAME=${MATOMO_WEBSITE_NAME}
+      - MATOMO_WEBSITE_HOST=${MATOMO_WEBSITE_HOST}
+      - MATOMO_ENABLE_PROXY_URI_HEADER=${MATOMO_ENABLE_PROXY_URI_HEADER}
+      - ALLOW_EMPTY_PASSWORD=${ALLOW_EMPTY_PASSWORD}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - SMTP_PROTOCOL=${SMTP_PROTOCOL}
+      - SMTP_PORT=${SMTP_PORT}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
     ports:
       - '80'
       # - '443:443'
